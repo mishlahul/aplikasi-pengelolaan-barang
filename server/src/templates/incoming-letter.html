@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Surat Barang Masuk</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 20mm;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        max-width: 800px;
+        margin: 40px auto;
+        color: #202723;
+        font: 14px/1.6 Arial, sans-serif;
+      }
+
+      .letter-header {
+        padding-bottom: 18px;
+        border-bottom: 2px solid #263d32;
+        text-align: center;
+      }
+
+      .letter-header h1 {
+        margin: 0;
+        color: #263d32;
+        font-size: 21px;
+        letter-spacing: 1px;
+      }
+
+      .letter-header p {
+        margin: 5px 0 0;
+        color: #65736b;
+      }
+
+      .letter-meta {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 6px 14px;
+        margin: 24px 0;
+      }
+
+      .letter-meta dt {
+        color: #65736b;
+      }
+
+      .letter-meta dd {
+        margin: 0;
+        font-weight: 600;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px 12px;
+        border: 1px solid #cbd4ce;
+        text-align: left;
+      }
+
+      th {
+        background: #edf2ee;
+        color: #263d32;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+
+      .numeric {
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .letter-total {
+        display: flex;
+        justify-content: flex-end;
+        gap: 24px;
+        margin-top: 18px;
+        padding-top: 12px;
+        border-top: 1px solid #cbd4ce;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .signature {
+        margin: 48px 0 0 auto;
+        width: 220px;
+        text-align: center;
+      }
+
+      .print-button {
+        display: block;
+        margin: 32px auto 0;
+        padding: 10px 18px;
+        border: 0;
+        border-radius: 4px;
+        background: #263d32;
+        color: #fff;
+        cursor: pointer;
+        font: inherit;
+      }
+
+      @media print {
+        body {
+          max-width: none;
+          margin: 0;
+        }
+
+        .print-button {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="letter-header">
+      <h1>SURAT BARANG MASUK</h1>
+      <p>Dokumen penerimaan barang</p>
+    </header>
+
+    <dl class="letter-meta">
+      <dt>Nomor surat</dt>
+      <dd>: {{LETTER_NUMBER}}</dd>
+      <dt>Tanggal penerimaan</dt>
+      <dd>: {{LOCAL_DATE}}</dd>
+      <dt>Asal barang</dt>
+      <dd>: {{SOURCE}}</dd>
+      <dt>Kategori</dt>
+      <dd>: {{CATEGORY}} / {{SUB_CATEGORY}}</dd>
+      <dt>Operator</dt>
+      <dd>: {{OPERATOR}}</dd>
+    </dl>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nama barang</th>
+          <th>Jumlah</th>
+          <th class="numeric">Harga satuan</th>
+          <th class="numeric">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ITEM_ROWS}}
+      </tbody>
+    </table>
+
+    <div class="letter-total">
+      <span>Total keseluruhan</span>
+      <span>Rp {{TOTAL}}</span>
+    </div>
+
+    <p class="signature">Petugas penerima<br><br><br>{{OPERATOR}}</p>
+    <button class="print-button" onclick="window.print()">Cetak surat</button>
+  </body>
+</html>

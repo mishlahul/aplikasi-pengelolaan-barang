@@ -1,0 +1,27 @@
+{
+  "name": "aplikasi-pengelolaan-barang-client",
+  "packageManager": "yarn@1.22.22",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": "22.23.3"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "exceljs": "^4.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.7"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0"
+  }
+}

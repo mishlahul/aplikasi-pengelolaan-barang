@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+uploads/
+dist/
+node_modules/
+.vscode/
+uploads/
