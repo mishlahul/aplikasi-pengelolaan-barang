@@ -6,8 +6,8 @@ Aplikasi ini membantu mencatat dan mengelola penerimaan barang gudang. Admin dap
 
 ## Link Project
 
-1. **Link Deployment (Live App):** [Belum tersedia; aplikasi belum memiliki URL deployment publik].
-2. **Link Video Demo:** [Belum tersedia].
+1. **Link Deployment (Live App):** [BarangIn](https://barangin.ishlahmuzakki.workers.dev/)
+2. **Link Video Demo:** [BarangIn Demo](https://drive.google.com/drive/folders/1YrtAykgqTFnqizdCgJkQOhtw-S2pNiWb?usp=sharing).
 
 ## Tech Stack
 

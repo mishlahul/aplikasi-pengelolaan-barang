@@ -6,4 +6,4 @@ dist/
 node_modules/
 .vscode/
 uploads/
-tsconfig.build.tsbuildinfo
+*.tsbuildinfo
